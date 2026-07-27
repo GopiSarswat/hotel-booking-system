@@ -65,3 +65,16 @@ client/src/
 
 Mock payment is intentional; no real card details are collected. Image upload uses local disk for development, with Cloudinary variables reserved in the environment example.
 
+## Vercel deployment
+
+The root `vercel.json` builds the Vite client and routes `/api/*` to the Express Vercel Function in `api/index.js`. Configure these production environment variables:
+
+```text
+MONGO_URI=mongodb+srv://...
+JWT_ACCESS_SECRET=...
+JWT_REFRESH_SECRET=...
+CLIENT_URL=https://your-project.vercel.app
+NODE_ENV=production
+```
+
+The frontend uses the same-origin `/api` path by default, so `VITE_API_URL` is not required on Vercel.
