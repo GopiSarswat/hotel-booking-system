@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { @apply border-white/10; }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-ink text-white antialiased; }
+  ::selection { @apply bg-violet-500/50 text-white; }
+}
+
+@layer components {
+  .container-page { @apply mx-auto w-full max-w-7xl px-5 sm:px-8; }
+  .surface { @apply rounded-2xl border border-white/10 bg-white/[.035]; }
+  .label { @apply mb-2 block text-xs font-semibold uppercase tracking-[.16em] text-white/45; }
+  .input { @apply w-full rounded-xl border border-white/10 bg-white/[.05] px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/30 focus:border-violet-400/60 focus:ring-2 focus:ring-violet-500/10; }
+  .btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 hover:bg-violet-100 disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-dark { @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[.05] px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10; }
+  .gradient-text { @apply bg-gradient-to-r from-violet-300 via-fuchsia-300 to-cyan-300 bg-clip-text text-transparent; }
+}
+
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(255,255,255,.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(to bottom, black 35%, transparent 92%);
+}
+
